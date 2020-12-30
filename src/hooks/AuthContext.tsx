@@ -14,6 +14,7 @@ interface SignInCredentials {
 interface AuthContextData {
     user: object;
     signIn(credentials: SignInCredentials): Promise<void>;
+    signOut(): void;
 }
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
@@ -46,7 +47,7 @@ export const AuthProvider: React.FC = ({ children }) => {
     }, []);
 
     return (
-        <AuthContext.Provider value={{ user: data.user, signIn }}>
+        <AuthContext.Provider value={{ user: data.user, signIn, signOut }}>
             {children}
         </AuthContext.Provider>
     );
