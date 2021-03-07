@@ -2,6 +2,7 @@ import React from 'react';
 import { Switch } from 'react-router-dom';
 import Dashboard from '../pages/Dashboard';
 import ForgotPassword from '../pages/ForgotPassword';
+import Profile from '../pages/Profile';
 import ResetPassword from '../pages/ResetPessword';
 
 import SignIn from '../pages/SignIn';
@@ -15,6 +16,7 @@ const Routes: React.FC = () => (
         <Route path="/forgot-password" component={ForgotPassword} />
         <Route path="/reset-password" component={ResetPassword} />
 
+        <Route path="/profile" component={Profile} isPrivate />
         <Route path="/dashboard" component={Dashboard} isPrivate />
     </Switch>
 );
